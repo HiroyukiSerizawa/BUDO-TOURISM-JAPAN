@@ -1,8 +1,165 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<title>Test</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BUDO TOURISM JAPAN｜武道ツーリズム</title>
+  <meta name="description" content="Plan authentic budō experiences in Japan: dojo visits, museums, etiquette, and events. Bilingual (EN/日本語)." />
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--accent:#22c55e;--ring:#334155;--text:#e5e7eb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6;background:linear-gradient(180deg,#0b1222,#0f172a 20%,#0b1222);color:var(--text)}
+    header{position:sticky;top:0;backdrop-filter:saturate(1.2) blur(8px);background:rgba(2,6,23,.7);border-bottom:1px solid var(--ring);z-index:50}
+    .container{max-width:1100px;margin:auto;padding:16px}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    nav a{color:var(--text);text-decoration:none;opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ring);background:#0b1222;color:var(--text);padding:.5rem .8rem;border-radius:999px;cursor:pointer}
+    .primary{border-color:transparent;background:linear-gradient(90deg,#16a34a,#22c55e);color:#051b0d;font-weight:700}
+    .hero{padding:64px 16px 32px;background:radial-gradient(80% 60% at 50% 0%, rgba(34,197,94,.15), transparent 70%)}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 8px}
+    h2{font-size:clamp(22px,3vw,28px);margin:24px 0 12px}
+    p.lead{font-size:clamp(16px,2.2vw,18px);opacity:.9}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:16px}
+    @media(min-width:780px){.card.quarter{grid-column:span 6}.card.third{grid-column:span 4}.card.half{grid-column:span 6}}
+    .badge{font-size:12px;padding:.2rem .5rem;border-radius:999px;border:1px solid var(--ring);color:var(--muted)}
+    .muted{color:var(--muted)}
+    .list{padding-left:18px}
+    .list li{margin:.25rem 0}
+    .row{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{border:1px solid var(--ring);border-radius:999px;padding:.2rem .6rem;font-size:12px;color:var(--muted)}
+    footer{border-top:1px solid var(--ring);margin-top:32px;padding:24px 16px;color:var(--muted)}
+    .lang-switch{display:flex;gap:8px}
+    .hide{display:none !important}
+    a.cta{color:#051b0d;text-decoration:none}
+    .cta:hover{text-decoration:underline}
+    .ext{font-size:12px;opacity:.9}
+  </style>
+</head>
 <body>
-  It works! If you see this as a web page (not raw tags), Pages is OK.
+  <header>
+    <div class="container">
+      <nav>
+        <div><strong>武道ツーリズム / BUDO TOURISM</strong></div>
+        <div class="lang-switch">
+          <button class="btn" data-lang="ja">日本語</button>
+          <button class="btn" data-lang="en">EN</button>
+          <a class="btn primary" href="#how">Get Started｜はじめ方</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="lang ja">日本で本物の「武道」を体験しよう</h1>
+      <h1 class="lang en hide">Plan an authentic budō trip in Japan</h1>
+      <p class="lead lang ja">合気道・柔道・剣道・空手・居合・弓道…見学から体験クラス、道場マナー、主要スポット、イベント情報まで、旅行者向けにやさしく案内します。</p>
+      <p class="lead lang en hide">Aikido, Judo, Kendo, Karate, Iaido, Kyudo—find visitor-friendly dojos, museums, etiquette tips, and events. Built for travelers.</p>
+      <div class="row" style="margin-top:12px">
+        <span class="pill">Tokyo</span><span class="pill">Kyoto</span><span class="pill">Okinawa</span><span class="pill">Beginner-friendly</span><span class="pill">Bilingual</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 class="lang ja">おすすめスポット</h2>
+    <h2 class="lang en hide">Featured places</h2>
+    <div class="grid">
+      <article class="card quarter">
+        <div class="badge">TOKYO｜JUDO</div>
+        <h3 class="lang ja">講道館（文京区）</h3>
+        <h3 class="lang en hide">Kodokan Judo Institute (Bunkyo, Tokyo)</h3>
+        <p class="lang ja">柔道の総本山。見学や一般練習の参加が可能なクラスあり。併設の「柔道資料館」や売店も。</p>
+        <p class="lang en hide">World HQ of judo. Offers practice and observation opportunities for visitors; on-site museum and shop.</p>
+        <p class="ext"><a class="cta" href="https://www.kodokan.org/" target="_blank" rel="noopener">Official info</a></p>
+      </article>
+
+      <article class="card quarter">
+        <div class="badge">TOKYO｜AIKIDO</div>
+        <h3 class="lang ja">合気会 本部道場（新宿区）</h3>
+        <h3 class="lang en hide">Aikikai Hombu Dojo (Shinjuku, Tokyo)</h3>
+        <p class="lang ja">世界の合気道本部。会員であればビジターの一日稽古（複数クラス参加可）制度あり。礼法や見学ルールも明記。</p>
+        <p class="lang en hide">World HQ of Aikido. Aikikai members can join as day visitors (multiple classes per day). Etiquette and visitor rules are published.</p>
+        <p class="ext"><a class="cta" href="https://www.aikikai.or.jp/eng/information/foreign.html" target="_blank" rel="noopener">Visitor info</a></p>
+      </article>
+
+      <article class="card quarter">
+        <div class="badge">OKINAWA｜KARATE</div>
+        <h3 class="lang ja">沖縄空手会館（豊見城市）</h3>
+        <h3 class="lang en hide">Okinawa Karate Kaikan (Tomigusuku)</h3>
+        <p class="lang ja">空手発祥の地・沖縄の拠点施設。道場・資料館・体験プログラムを備え、英語ページも充実。</p>
+        <p class="lang en hide">Flagship hub for Okinawan Karate with dojos, museum, and visitor programs. Full English site available.</p>
+        <p class="ext"><a class="cta" href="https://karatekaikan.jp/en" target="_blank" rel="noopener">Official site</a></p>
+      </article>
+
+      <article class="card quarter">
+        <div class="badge">KYOTO｜HISTORIC</div>
+        <h3 class="lang ja">京都武道センター・旧武徳殿</h3>
+        <h3 class="lang en hide">Kyoto Budo Center & Butokuden</h3>
+        <p class="lang ja">明治期の伝統的武道殿。剣道・柔道・なぎなた等の稽古・大会で利用。観覧のみでも雰囲気は圧巻。</p>
+        <p class="lang en hide">Historic hall used for kendo, judo, and more. Even a simple visit gives a powerful sense of budō heritage.</p>
+        <p class="ext"><a class="cta" href="https://www.the-kansai-guide.com/en/directory/item/11986/" target="_blank" rel="noopener">Overview</a></p>
+      </article>
+    </div>
+
+    <section id="etiquette" class="card">
+      <div class="badge">ETIQUETTE｜礼法</div>
+      <h2 class="lang ja">道場での基本マナー</h2>
+      <h2 class="lang en hide">Dojo etiquette basics</h2>
+      <ul class="list lang ja">
+        <li>入退場時に一礼（<em>礼</em>）。</li>
+        <li>畳の端に座り、先生・上級者の指示に従う。</li>
+        <li>爪は短く、指輪や時計は外す。清潔な道衣（<em>道着</em>）を着用。</li>
+        <li>写真や動画撮影は事前に許可を得る。</li>
+      </ul>
+      <ul class="list lang en hide">
+        <li>Bow when entering/leaving the dojo (<em>rei</em>).</li>
+        <li>Sit by the tatami edge; follow instructors and seniors.</li>
+        <li>Keep nails short; remove jewelry; wear a clean <em>dogi/gi</em>.</li>
+        <li>Always ask before filming or taking photos.</li>
+      </ul>
+    </section>
+
+    <section id="how" class="card">
+      <div class="badge">START HERE</div>
+      <h2 class="lang ja">はじめ方（旅行者向け）</h2>
+      <h2 class="lang en hide">How to book a visit</h2>
+      <ol class="list lang ja">
+        <li>公式サイトで最新の「ビジター可否」「料金」「スケジュール」を確認。</li>
+        <li>参加条件（会員証・保険・帯の色など）をチェック。</li>
+        <li>メールフォームで事前連絡（名前・所属・経験年数・希望日）。</li>
+        <li>当日は早めに到着し、受付でビジター料金を支払い、礼法に従って参加。</li>
+      </ol>
+      <ol class="list lang en hide">
+        <li>Check official pages for visitor policy, fees, and schedule.</li>
+        <li>Confirm requirements (membership, insurance, rank, etc.).</li>
+        <li>Contact in advance (name, affiliation, years of practice, desired date).</li>
+        <li>Arrive early; pay the fee; follow etiquette and enjoy practice.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <span>© Budo Tourism Japan</span>
+        <span class="muted">Static HTML – GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const switchers = document.querySelectorAll('[data-lang]');
+    const setLang = lang => {
+      document.querySelectorAll('.lang').forEach(el=>{
+        const isJA = el.classList.contains('ja');
+        el.classList.toggle('hide', (lang==='en' && isJA) || (lang==='ja' && !isJA));
+      });
+      localStorage.setItem('budo_lang', lang);
+    };
+    switchers.forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+    setLang(localStorage.getItem('budo_lang')||'ja');
+  </script>
 </body>
 </html>

@@ -1,15 +1,27 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>TEST: last_updated.json</title>
-<p id="last-updated">Loading...</p>
 <h1>表示テスト</h1>
+<p id="last-updated">Loading...</p>
 <script>
 (async () => {
   try {
-    const res = await fetch('./data/last_updated.json');
+    const res = await fetch('./data/last_updated.json?cb=' + Date.now());
     const d = await res.json();
+
+    // 更新日時表示
     document.getElementById('last-updated').textContent =
       `最終更新（JST）: ${d.jst} / Last updated (UTC): ${d.iso_utc}`;
+
+    // 道場リスト表示
+    if (d.dojos) {
+      const ul = document.getElementById('dojo-list');
+      d.dojos.forEach(dojo => {
+        const li = document.createElement('li');
+        li.textContent = `${dojo.name} — ${dojo.city}`;
+        ul.appendChild(li);
+      });
+    }
   } catch (e) {
     document.getElementById('last-updated').textContent = '読み込み失敗';
   }

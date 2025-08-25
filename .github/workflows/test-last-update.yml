@@ -1,0 +1,34 @@
+name: Test: Update last_updated.json
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # 5分おき
+  workflow_dispatch: {}      # 手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  update-timestamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write timestamp JSON (UTC & JST)
+        run: |
+          ISO_UTC="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          JST="$(TZ=Asia/Tokyo date +"%Y-%m-%d %H:%M:%S %Z")"
+          EPOCH="$(date -u +%s)"
+          mkdir -p test/data
+          cat > test/data/last_updated.json <<EOF
+          {
+            "iso_utc": "${ISO_UTC}",
+            "jst": "${JST}",
+            "epoch": ${EPOCH}
+          }
+          EOF
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add test/data/last_updated.json
+          git commit -m "test: auto-update last_updated.json ${ISO_UTC}" || echo "No changes"
+          git push

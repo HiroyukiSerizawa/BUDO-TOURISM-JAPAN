@@ -1,8 +1,8 @@
 {
   "iso_utc": "2025-07-01T00:00:00Z",
   "jst": "2025-07-01 09:00:00 JST",
-  "epoch": 1735689600
-    "dojos": [
+  "epoch": 1735689600,
+  "dojos": [
     { "name": "Kodokan", "city": "Tokyo" },
     { "name": "Aikikai Hombu Dojo", "city": "Tokyo" },
     { "name": "Okinawa Karate Kaikan", "city": "Okinawa" }

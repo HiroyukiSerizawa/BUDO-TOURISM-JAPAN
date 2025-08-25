@@ -1,9 +1,9 @@
-name: Test: Update last_updated.json
+name: "Test - Update last_updated.json"
 
 on:
   schedule:
     - cron: "*/5 * * * *"   # 5分おき
-  workflow_dispatch: {}      # 手動実行も可能
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,8 +16,8 @@ jobs:
 
       - name: Write timestamp JSON (UTC & JST)
         run: |
-          ISO_UTC="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-          JST="$(TZ=Asia/Tokyo date +"%Y-%m-%d %H:%M:%S %Z")"
+          ISO_UTC="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          JST="$(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M:%S %Z')"
           EPOCH="$(date -u +%s)"
           mkdir -p test/data
           cat > test/data/last_updated.json <<EOF

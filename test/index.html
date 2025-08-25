@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TEST: last_updated.json</title>
+<p id="last-updated">Loading...</p>
+
+<script>
+(async () => {
+  try {
+    const res = await fetch('./data/last_updated.json');
+    const d = await res.json();
+    document.getElementById('last-updated').textContent =
+      `最終更新（JST）: ${d.jst} / Last updated (UTC): ${d.iso_utc}`;
+  } catch (e) {
+    document.getElementById('last-updated').textContent = '読み込み失敗';
+  }
+})();
+</script>

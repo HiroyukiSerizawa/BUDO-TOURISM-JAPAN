@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TEST × Supabase</title>
+<div id="list">Loading...</div>
+
+<script>
+const SB_URL = "https://opkqcvdnrdcnnuktagnm.supabase.co/";      // ←置き換え
+const SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wa3FjdmRucmRjbm51a3RhZ25tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYyMzE3MjAsImV4cCI6MjA3MTgwNzcyMH0.6pSOgmaRhEJZP04E3nxeiIRuacCroy2Wt3EotYmLn0k";                  // ←置き換え
+const ENDPOINT = `${SB_URL}/rest/v1/dojos?select=*&order=featured.desc,name_en.asc`;
+
+async function load() {
+  const res = await fetch(ENDPOINT, {
+    headers: {
+      apikey: SB_KEY,
+      Authorization: `Bearer ${SB_KEY}`
+    },
+    cache: "no-store"
+  });
+  if (!res.ok) {
+    document.getElementById('list').textContent = 'Failed to load.';
+    return;
+  }
+  const data = await res.json();
+  const html = data.map(d => `
+    <article style="border:1px solid #e5e7eb;border-radius:12px;padding:12px;margin:12px 0">
+      <div style="font-weight:700">${d.name_en || ''}${(d.name_en && d.name_ja)?' / ':''}${d.name_ja || ''}</div>
+      <div style="opacity:.7">${d.prefecture||''} ${d.city||''} ${Array.isArray(d.tags)?'・'+d.tags.join(' / '):''}</div>
+      <p>
+        ${d.url ? `<a href="${d.url}" target="_blank" rel="noopener">Official</a>` : ''}
+        ${d.map_url ? ` / <a href="${d.map_url}" target="_blank" rel="noopener">Map</a>` : ''}
+        ${d.google_reviews_url ? ` / <a href="${d.google_reviews_url}" target="_blank" rel="noopener">Google Reviews</a>` : ''}
+      </p>
+      ${d.featured ? `<span style="border:1px solid #16a34a;color:#16a34a;border-radius:999px;padding:2px 8px;font-size:12px">★ Featured</span>`:''}
+    </article>
+  `).join('');
+  document.getElementById('list').innerHTML = html || 'No data';
+}
+load();
+</script>

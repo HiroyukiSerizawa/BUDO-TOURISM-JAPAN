@@ -2,7 +2,7 @@ name: "Test - Update last_updated.json"
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # 5分おき
+#    - cron: "*/5 * * * *"   # 5分おき
   workflow_dispatch:
 
 permissions:
